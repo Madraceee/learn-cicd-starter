@@ -35,3 +35,8 @@ jobs:
 
       - name: Code Formatted
         run: (test -z $(go fmt ./...))
+      - name: Static check
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+          install-go: false
