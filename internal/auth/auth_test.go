@@ -18,7 +18,7 @@ func TestGetAPIKey(t *testing.T) {
 			IsError: false,
 		},
 		{
-			Name:    "Invalid Length",
+			Name:    "Valid extra length authorization",
 			Input:   []string{"ApiKey 123 456"},
 			Output:  "123",
 			IsError: false,
@@ -26,6 +26,12 @@ func TestGetAPIKey(t *testing.T) {
 		{
 			Name:    "Invalid Length",
 			Input:   []string{"ApiKey"},
+			Output:  "",
+			IsError: true,
+		},
+		{
+			Name:    "Empty Authoriation",
+			Input:   []string{},
 			Output:  "",
 			IsError: true,
 		},
